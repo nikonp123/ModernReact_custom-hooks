@@ -1,6 +1,6 @@
-import Section from "../UI/Section";
-import ProductItem from "./ProductItem";
-import styles from "./Products.module.css";
+import Section from '../UI/Section';
+import ProductItem from './ProductItem';
+import styles from './Products.module.css';
 
 const Products = (props) => {
   let productList = (
@@ -24,7 +24,7 @@ const Products = (props) => {
   }
 
   if (props.loading) {
-    content = "Загрузка товаров...";
+    content = 'Download products...';
   }
 
   return (

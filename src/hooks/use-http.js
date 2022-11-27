@@ -9,9 +9,9 @@ const useHTTP = (requestOptions, manageData) => {
     setError(null);
     try {
       const response = await fetch(requestOptions.url, {
-        method: requestOptions.method,
-        headers: requestOptions.headers,
-        body: JSON.stringify(requestOptions.body),
+        method: requestOptions.method ? requestOptions.method : 'GET',
+        headers: requestOptions.headers ? requestOptions.headers : {},
+        body: requestOptions.body ? JSON.stringify(requestOptions.body) : null,
       });
 
       if (!response.ok) {

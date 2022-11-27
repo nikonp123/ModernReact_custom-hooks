@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
-import styles from "./ProductForm.module.css";
+import styles from './ProductForm.module.css';
 
 const ProductForm = (props) => {
   const productInputRef = useRef();
@@ -18,9 +18,7 @@ const ProductForm = (props) => {
   return (
     <form className={styles.form} onSubmit={submitHandler}>
       <input type="text" ref={productInputRef} />
-      <button>
-        {props.loading ? "Обработка запроса..." : "Добавить Товар"}
-      </button>
+      <button>{props.loading ? 'Request is working...' : 'Add product'}</button>
     </form>
   );
 };
