@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Section from "../UI/Section";
-import ProductForm from "./ProductForm";
+import Section from '../UI/Section';
+import ProductForm from './ProductForm';
 
 const NewProduct = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,18 +12,18 @@ const NewProduct = (props) => {
     setError(null);
     try {
       const response = await fetch(
-        "https://react-course-http-8220d-default-rtdb.firebaseio.com/products.json",
+        'https://modernreactcustomhooks-default-rtdb.firebaseio.com/products.json',
         {
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify({ text: productText }),
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       );
 
       if (!response.ok) {
-        throw new Error("Ошибка запроса.");
+        throw new Error('Ошибка запроса.');
       }
 
       const data = await response.json();
@@ -33,7 +33,7 @@ const NewProduct = (props) => {
 
       props.onAddProduct(createdProduct);
     } catch (e) {
-      setError(e.message || "Что-то пошло не так...");
+      setError(e.message || 'Что-то пошло не так...');
     }
     setIsLoading(false);
   };
